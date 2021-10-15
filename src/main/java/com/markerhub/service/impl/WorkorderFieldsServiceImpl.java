@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
@@ -41,7 +43,7 @@ public class WorkorderFieldsServiceImpl extends ServiceImpl<WorkorderFieldsMappe
 //}
 
     @Override
-    public Integer getCount(long i, long i1,int site) {
+    public List<Map> getCount(long i, long i1, int site) {
 
   return   workorderFieldsMapper.counts(i,i1,site);
     }

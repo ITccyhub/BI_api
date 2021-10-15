@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Array;
 import java.sql.Wrapper;
 import java.text.ParseException;
-import java.util.Date;
+import java.util.*;
 
 /**
  * <p>
@@ -29,18 +30,22 @@ import java.util.Date;
 @RequestMapping("/ir")
 public class WorkorderFieldsController {
     @Autowired
-    WorkorderFieldsService  workorderid ;
+    WorkorderFieldsService workorderid;
 
 
     @GetMapping("/counts/{s}")
     public Result counts(@PathVariable int s) throws ParseException {
 
 
-   // Integer work= workorderid.getCount(1631693615541L,1631759949575L,4);
+        // Integer work= workorderid.getCount(1631693615541L,1631759949575L,4);
 
-  Integer c= workorderid.getCount(workorderid.returnDates(workorderid.getStartOfDay(new Date())),workorderid.returnDates(workorderid.getEndOfDay(new Date())),s);
-
-        return Result.succ(c);
+        List<Map> list = workorderid.getCount(workorderid.returnDates(workorderid.getStartOfDay(new Date())), workorderid.returnDates(workorderid.getEndOfDay(new Date())), s);
+        ArrayList listarry = new ArrayList();
+        Map map = null;
+        for (int i = 0; i < list.size(); i++) {
+            map = list.get(i);
+        }
+        Collection cc=map.values();
+        return Result.succ(cc);
     }
-
 }

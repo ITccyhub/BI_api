@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -16,7 +18,7 @@ import java.util.Date;
  */
 public interface WorkorderFieldsService extends IService<WorkorderFields> {
 
-    Integer getCount(long i, long i1,int site);
+    List<Map> getCount(long i, long i1, int site);
 
     LocalDateTime getStartOfDay(Date date);
 
