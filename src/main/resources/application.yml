@@ -1,0 +1,29 @@
+# DataSource Config
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/vueblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: ccy19971025
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://114.115.166.120:1433;DatabaseName=servicedesk                      #ip地址:端口;DatabaseName=数据库名
+    username: sa
+    password: ccy19971025!
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1
+    testWhileIdle: true
+    testOnBorrow: true
+    testOnReturn: true
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8099
