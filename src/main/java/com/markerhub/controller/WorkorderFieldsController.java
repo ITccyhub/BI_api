@@ -6,6 +6,7 @@ import com.markerhub.common.lang.Result;
 import com.markerhub.entity.WorkorderFields;
 import com.markerhub.service.WorkorderFieldsService;
 import com.markerhub.service.impl.WorkorderFieldsServiceImpl;
+import com.markerhub.service.impl.exportexit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,8 @@ import java.util.*;
 public class WorkorderFieldsController {
     @Autowired
     WorkorderFieldsService workorderid;
+    @Autowired
+    com.markerhub.service.impl.exportexit exportexits;
 
 
     @GetMapping("/counts/{s}")
@@ -48,4 +51,12 @@ public class WorkorderFieldsController {
         Collection cc=map.values();
         return Result.succ(cc);
     }
+    @GetMapping("/irex{ss}")
+    public Result irex(@PathVariable String ss){
+        Integer cc=exportexits.ss(ss);
+        return Result.succ(cc);
+    }
+
+
+
 }

@@ -31,7 +31,7 @@ import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
 public class WorkorderFieldsServiceImpl extends ServiceImpl<WorkorderFieldsMapper, WorkorderFields> implements WorkorderFieldsService {
    @Autowired
     private WorkorderFieldsMapper workorderFieldsMapper;
-    private String $dateStr;
+   // private String $dateStr;
 
 //    private Integer ccc(){
 //       Integer s= workorderFieldsMapper.dff(long ss,long sf);
