@@ -13,5 +13,8 @@ public class  exportexit {
 
       return  texitmapperid.ss(ss);
   }
+    public Integer Gs(String ss){
 
+        return texitmapperid.Gs(ss);
+    }
 }

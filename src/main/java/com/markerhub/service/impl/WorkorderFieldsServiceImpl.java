@@ -45,9 +45,34 @@ public class WorkorderFieldsServiceImpl extends ServiceImpl<WorkorderFieldsMappe
     @Override
     public List<Map> getCount(long i, long i1, int site) {
 
-  return   workorderFieldsMapper.counts(i,i1,site);
+       return   workorderFieldsMapper.counts(i,i1,site);
+    }
+    public List<Map> getCounts(long i, long i1) {
+
+        return   workorderFieldsMapper.count(i,i1);
+    }
+    @Override
+    public List<Map> gets() {
+
+        return   workorderFieldsMapper.strs();
     }
 
+    @Override
+    public List<Map> getyears(long i,long i1){
+
+
+        return   workorderFieldsMapper.count(i,i1);
+    }
+
+    @Override
+    public  Integer getzhanbi(long i,long i1){
+
+        return workorderFieldsMapper.zhanbi(i,i1);
+    }
+    @Override
+    public List<Map> pepotime(long s,long sa){
+        return workorderFieldsMapper.pepotime(s,sa);
+    }
 
     @Override
     public long returnDates(LocalDateTime startOfDay) { // zhuan huan ji yuanshijian
@@ -81,7 +106,6 @@ public class WorkorderFieldsServiceImpl extends ServiceImpl<WorkorderFieldsMappe
        return  startOfDay;
         // return Date.from(startOfDay.atZone(ZoneId.systemDefault()).toInstant());
     }
-
 
 
 

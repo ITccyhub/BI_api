@@ -8,9 +8,9 @@
 spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://114.115.166.120:1433;DatabaseName=servicedesk                      #ip地址:端口;DatabaseName=数据库名
+    url: jdbc:sqlserver://124.70.99.16:1433;DatabaseName=servicedesk                      #ip地址:端口;DatabaseName=数据库名
     username: sa
-    password: ccy19971025!
+    password: CCy19971025!
     maxActive: 20
     initialSize: 1
     maxWait: 60000

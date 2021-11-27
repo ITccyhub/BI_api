@@ -25,4 +25,10 @@ public interface WorkorderFieldsService extends IService<WorkorderFields> {
     long returnDates(LocalDateTime startOfDay);
 
     LocalDateTime getEndOfDay(Date date);
+
+    List<Map> getCounts(long returnDates, long returnDates1);
+    List<Map> gets();
+    List<Map> getyears(long returnDates, long returnDates1);
+    Integer getzhanbi(long returnDates, long returnDates1);
+    List<Map> pepotime (long s,long sa);
 }
